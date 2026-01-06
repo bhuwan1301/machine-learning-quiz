@@ -45,7 +45,7 @@ function Quiz() {
 
   const fetchQuestions = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/questions');
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/questions`);
       const data = await response.json();
       setQuestions(data);
       
@@ -114,7 +114,7 @@ function Quiz() {
       // Prepare answers array in order
       const answersArray = questions.map((q) => answers[q.id] || '');
 
-      const response = await fetch('http://localhost:5000/api/submit', {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/submit`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

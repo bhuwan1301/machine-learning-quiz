@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './AdminDashboard.css';
+import { API_URL } from '../config';
 
 function AdminDashboard() {
   const [users, setUsers] = useState([]);
@@ -28,7 +29,7 @@ function AdminDashboard() {
 
   const fetchUsers = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/admin/users');
+      const response = await fetch(`${API_URL}/api/admin/users`);
       const data = await response.json();
       
       if (Array.isArray(data)) {

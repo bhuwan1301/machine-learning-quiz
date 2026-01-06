@@ -13,7 +13,7 @@ app.use(express.json());
 const corsOptions = {
   origin: [
     'http://localhost:5173',
-    'https://your-app-name.vercel.app',
+    'https://machine-learning-quiz-one.vercel.app',
   ],
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
